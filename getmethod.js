@@ -5,13 +5,19 @@ const bodyParser = require("body-parser");
 
 app.get('/process_get', function (req, res) {
    res.send('Get Request Called');
-  express.response = {
-   firstname : req.query.first_name,
-   lastname : req.query.last_name
-  };
-  console.log(res);
-  res.end(JSON.stringify(express.response));
 })
+
+app.use(express.json());
+
+app.post('/process_post', function (req, res) {
+ //  res.send('Post request called ');
+ const { name } = req.body; 
+   res.json({
+      success :true,
+      message : `Welcome back ${name}`
+   });
+
+});
 
 
 
