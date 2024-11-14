@@ -1,7 +1,8 @@
 
 var express = require('express');
 var app = express();
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
+const morgan = require('morgan')
 
 app.get('/process_get', function (req, res) {
    res.send('Get Request Called');
