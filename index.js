@@ -22,7 +22,7 @@ app.post('/test', function (req, res) {
     if (name === "neha" && Number(id) === 1) {
         message = "yes you are neha.." 
     }
-    res.status(500).json({ message, ...req.body });  // combine 1 json to another json 
+    res.status(200).json({ message, ...req.body });  // combine 1 json to another json 
  })
 
 var server = app.listen(5000, function () {
